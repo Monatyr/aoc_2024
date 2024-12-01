@@ -44,8 +44,15 @@ def post_solution(day: int, part: int, data):
 
 
 def sort(lines: list[int]) -> list[int]:
-    for i in range(len(lines) - 1):
-        for j in range(i+1, len(lines)):
-            if lines[i] > lines[j]:
-                lines[i], lines[j] = lines[j], lines[i]
-    return lines
+    if len(lines) <= 1:
+        return lines
+    pivot = lines[0]
+    less, eq, more = [], [], []
+    for el in lines:
+        if el < pivot:
+            less.append(el)
+        elif el == pivot:
+            eq.append(el)
+        else:
+            more.append(el)
+    return sort(less) + eq + sort(more)
