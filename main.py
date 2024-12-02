@@ -1,10 +1,13 @@
 from utils.utils import *
 import d1.main
+import d2.main
 
 
-DAY=1
+DAY=2
 
 
 if __name__ == "__main__":
     save_input(DAY)
-    d1.main.solution()
+    d2.main.solution()
+
+    
