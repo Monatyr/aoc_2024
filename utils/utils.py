@@ -43,16 +43,24 @@ def post_solution(day: int, part: int, data):
         sys.exit(f"response: {r.status_code}: {r.reason} \n{r.content}")
 
 
-def sort(lines: list[int]) -> list[int]:
+def default_comparator(a, b):
+    if a < b:
+        return -1
+    elif a > b:
+        return 1
+    return 0
+
+
+def sort(lines: list[int], comparator=default_comparator) -> list[int]:
     if len(lines) <= 1:
         return lines
     pivot = lines[0]
     less, eq, more = [], [], []
     for el in lines:
-        if el < pivot:
+        if comparator(el, pivot) == -1:
             less.append(el)
-        elif el == pivot:
+        elif comparator(el, pivot) == 0:
             eq.append(el)
         else:
             more.append(el)
-    return sort(less) + eq + sort(more)
+    return sort(less, comparator) + eq + sort(more, comparator)
