@@ -64,3 +64,7 @@ def sort(lines: list[int], comparator=default_comparator) -> list[int]:
         else:
             more.append(el)
     return sort(less, comparator) + eq + sort(more, comparator)
+
+
+def in_bounds(i, j, h, w):
+    return i >= 0 and j >= 0 and i < h and j < w

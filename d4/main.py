@@ -1,10 +1,6 @@
 from utils.utils import *
 
 
-def in_bounds(i, j, h, w):
-    return i >= 0 and j >= 0 and i < h and j < w
-
-
 def check_direction(lines, search_word, x, y, x_diff, y_diff, h, w):
     i, j, word = y, x, ''
     while in_bounds(i, j, h, w) and len(word) < len(search_word):

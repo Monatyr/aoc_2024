@@ -4,13 +4,14 @@ import d2.main
 import d3.main
 import d4.main
 import d5.main
+import d6.main
 
 
-DAY=5
+DAY=6
 
 
 if __name__ == "__main__":
     save_input(DAY)
-    d5.main.solution()
+    d6.main.solution()
 
     
