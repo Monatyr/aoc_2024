@@ -8,13 +8,12 @@ import d6.main
 import d7.main
 import d8.main
 import d9.main
+import d10.main
 
 
-DAY=9
+DAY=10
 
 
 if __name__ == "__main__":
     save_input(DAY)
-    d9.main.solution()
-
-    
+    d10.main.solution()
