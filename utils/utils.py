@@ -68,3 +68,11 @@ def sort(lines: list[int], comparator=default_comparator) -> list[int]:
 
 def in_bounds(i, j, h, w):
     return i >= 0 and j >= 0 and i < h and j < w
+
+
+def how_many_digits(n: int):
+    counter = 0
+    while n >=1:
+        n /= 10
+        counter += 1
+    return counter
