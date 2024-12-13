@@ -1,11 +1,19 @@
 import requests
 import sys
 import os
+from enum import Enum
 from dotenv import load_dotenv
 
 load_dotenv()
 AOC_URL = 'https://adventofcode.com/2024/day/'
 session_token = os.getenv('AOC_TOKEN')
+
+
+class Direction(Enum):
+    UP = (-1, 0)
+    DOWN = (1, 0)
+    LEFT = (0, -1)
+    RIGHT = (0, 1)
 
 
 def get_lines(filename: str):
