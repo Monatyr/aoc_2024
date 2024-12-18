@@ -11,11 +11,12 @@ import d9.main
 import d10.main
 import d11.main
 import d12.main
+import d13.main
 
 
-DAY=12
+DAY=13
 
 
 if __name__ == "__main__":
     save_input(DAY)
-    d12.main.solution()
+    d13.main.solution()
